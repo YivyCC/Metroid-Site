@@ -10,14 +10,20 @@
 body{
   margin: 0;
   padding: 0;
+  background-color: var(--main-back-color);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 /* -- HEADER START --*/
 .header{
-  background-color: var(--main-back-color);
   display: flex;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  transition: background-color 0.3s ease;
 }
 
 .header__wrapper{
@@ -61,7 +67,6 @@ body{
   rotate: 180deg;
 }
 /* -- HEADER END --*/
-
 /* -- NAVBAR START --*/
 .navbar{
   width: 0;
@@ -84,7 +89,7 @@ body{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: #222222e2;
+  background-color: #2222228b;
   width: 100%;
   height: 100%;
   padding-top: 80px;
@@ -141,23 +146,44 @@ body{
   font-family: var(--main-font-fam);
   font-size: 1.2rem;
 }
-
-@keyframes nav-bar-appear{
-  from{
-    width: 0;
-    overflow: hidden;
-  } 
-  to{
-    width: 100%;
-  }
+/* -- NAVBAR END -- */
+/* -- MAIN CONTENT --*/
+.main{
+  height: 100%;
 }
 
-@keyframes nav-bar-disappear{
+.main__intro{
+  width: 100%;
+  height: 100%;
+  background: url(images/wallpapers/metroid_wallpaper_by_francoferrari_d88ghit_Richiedit.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.main__intro-container{
+  width: 80%;
+  height: 70dvh;
+  background-color: #222222e2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main__intro p{
+  color: var(--main-font-color);
+}
+
+/* -- ANIMATIONS --*/
+@keyframes pinga {
   from{
-    width: 100%;
-    overflow: hidden;
-  } 
+    opacity: 1;
+  }
   to{
-    width: 0;
+    opacity: 0.1;
   }
 }
