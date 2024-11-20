@@ -1,16 +1,19 @@
 :root{
   --main-back-color: #222;
   --second-back-color: #111;
+  --third-back-color: #151515;
   --main-phazon-color: #7CA7D8;
   --main-font-color: #fff;
   --main-font-fam: "Anta", sans-serif;
+  --second-font-fam: "Russo One", sans-serif;
   --transition: 0.2s ease-out; 
+  --border-radius: 20px;
 }
 
 body{
   margin: 0;
   padding: 0;
-  background-color: var(--main-back-color);
+  background-color: var(--second-back-color);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -29,7 +32,7 @@ body{
 
 .header__wrapper{
   background-color: var(--second-back-color);
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   margin: 10px;
   padding: 5px;
   width: 100%;
@@ -111,7 +114,7 @@ body{
   position: relative;
   padding: 10px;
   background-color: var(--main-back-color);
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   filter: drop-shadow(0 2px 2px var(--second-back-color));
   transition: filter var(--transition);
 }
@@ -122,7 +125,7 @@ body{
 
 .navbar__item-image-container{
   padding: 15px;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   background-color: var(--second-back-color);
   display: flex;
   justify-content: left;
@@ -153,36 +156,109 @@ body{
 /* -- INTRODUCTION --*/
 .main{
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main__intro{
-  width: 100%;
-  height: 100%;
-  background: url(images/wallpapers/metroid_wallpaper_by_francoferrari_d88ghit_Richiedit.jpg);
+  width: 90%;
+  height: 80dvh;
+  border-radius: var(--border-radius);
+  background-color: var(--main-back-color);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  aspect-ratio: 4/8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
-
-.main__intro-container{
-  width: 80%;
-  height: 70dvh;
-  background-color: #222222e2;
+  aspect-ratio: 16/9;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin: 3rem 1rem;
+  position: relative;
+}
+
+.main__intro h1{
+  margin: 0;
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: auto;
+  font-family: var(--second-font-fam);
+  line-height: 1em;
+  font-size: 3rem;
+  color: var(--main-font-color);
+}
+
+.main__intro h1::after{
+  position: absolute;
+  inset: 0 0 0 0;
+  content: attr(data-content);
+  z-index: 2;
+  -webkit-text-stroke: 1px var(--main-font-color);
+  color: transparent;
+}
+
+.model{
+  background-image: url(images/wallpapers/samus-aaran.png);
+  background-size: auto 130%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.main__intro-container{
+  width: 90%;
+  height: 50%;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border-radius: var(--border-radius);
+  background-color: #696a6ab8;
+  position: absolute;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  z-index: 3;
 }
 
 .main__intro p{
   color: var(--main-font-color);
+  font-family: var(--main-font-fam);
+  font-size: 1.2rem;
 }
 
+.main__intro-btn{
+  font-family: var(--main-font-fam);
+  border: transparent;
+  background-color: var(--second-back-color);
+  width: max-content;
+  font-size: 1.5rem;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--main-font-color);
+  filter: drop-shadow(0 2px 2px var(--second-back-color));
+  transition: filter var(--transition), background var(--transition);
+}
+
+.main__intro-btn:hover{
+  filter: drop-shadow(0 2px 2px #7ca7d8ab);
+  background: linear-gradient(90deg, var(--second-back-color) 30%, var(--main-back-color) 60%, #7ca7d83f 100%);
+}
 /* -- IMAGE SLIDER --*/
+.main__game-database{
+  width: 90%;
+}
+
+.main__game-database h2{
+  font-family: var(--main-font-fam);
+  color: var(--main-font-color);
+  margin-bottom: 1rem;
+}
+
 .main__slider-wrapper{
   position: relative;
   max-width: 48rem;
@@ -196,7 +272,6 @@ body{
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-  border-radius: 20px;
   -webkit-overflow-scrolling: touch; 
 }
 
