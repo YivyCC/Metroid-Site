@@ -8,6 +8,7 @@
   --second-font-fam: "Russo One", sans-serif;
   --transition: 0.2s ease-out; 
   --border-radius: 20px;
+  --paragraph-font-size: 1.2rem;
 }
 
 body{
@@ -226,10 +227,10 @@ body{
   z-index: 3;
 }
 
-.main__intro p{
+p{
   color: var(--main-font-color);
   font-family: var(--main-font-fam);
-  font-size: 1.2rem;
+  font-size: var(--paragraph-font-size);
 }
 
 .main__intro-btn{
@@ -254,7 +255,7 @@ body{
   width: 90%;
 }
 
-.main__game-database h2{
+h2{
   font-family: var(--main-font-fam);
   color: var(--main-font-color);
   margin-bottom: 1rem;
@@ -310,13 +311,31 @@ body{
   opacity: 1;
 }
 
+/* -- BEASTIARY --*/
+.main__beastiary{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__beastiary p{
+  margin: 0;
+}
+
+.main__beastiary img{
+  width: 100%;
+  align-self: center;
+  margin-top: 10px;
+}
+
 /* --------- END OF MAIN SECTION -------- */
 /* -- FOOTER -- */
 footer{
   border-top: 2px solid var(--main-font-color);
   margin-top: 50px;
   font-family: var(--main-font-fam);
-  background-color: var(--main-back-color);
+  font-size: 0.8rem;
+  overflow: hidden;
 }
 
 .footer__list{
@@ -324,56 +343,49 @@ footer{
   padding: 10px;
   margin:0;
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
+  flex-direction: column;
   color: var(--main-font-color);
+  text-align: center;
 }
 
 .footer__list-item{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  font-size: 0.8rem;
 }
 
 .footer__list-item h3{
   color: var(--main-phazon-color);
   margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
 }
 
-.footer__list-item a{
-  color: var(--main-font-color);
-  text-decoration: none;
-}
-
-.footer__content{
-  display: none;
+.footer__list-item p{
+  margin: 0;
+  font-size: 0.8rem;
 }
 
 .quick--links{
-
+  display: none;
 }
 
-.social-media-logo{
+.footer__social-links img{
   width: 20px;
   height: 20px;
-  background-position: center;
-  background-size: contain;
+  filter: drop-shadow(0px -200px 0 var(--main-font-color));
+  transform: translateY(200px);
 }
 
-.logo--facebook{
-  background-image: url(images/icons/facebook.png);
+.legal--notes small a{
+  text-decoration: none;
+  color: var(--main-font-color);
 }
 
-.logo--insta{
-  background-image: url(images/icons/instagram.png);
+.legal--notes small a:hover{
+  text-decoration: underline;
+  color: var(--main-phazon-color);
 }
-
-.logo--x{
-  background-image: url(images/icons/twitter.png);
-}
-
 /*-- END OF FOOTER */
-
-
 
 /* -- ANIMATIONS --*/
 @keyframes pinga {
