@@ -19,6 +19,7 @@ body{
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* -- HEADER START --*/
@@ -233,7 +234,7 @@ p{
   font-size: var(--paragraph-font-size);
 }
 
-.main__intro-btn{
+.main__btn{
   font-family: var(--main-font-fam);
   border: transparent;
   background-color: var(--second-back-color);
@@ -246,12 +247,12 @@ p{
   transition: filter var(--transition), background var(--transition);
 }
 
-.main__intro-btn:hover{
+.main__btn:hover{
   filter: drop-shadow(0 2px 2px #7ca7d8ab);
   background: linear-gradient(90deg, var(--second-back-color) 30%, var(--main-back-color) 60%, #7ca7d83f 100%);
 }
 /* -- IMAGE SLIDER --*/
-.main__game-database{
+.main__game-database, .main__gallery{
   width: 90%;
 }
 
@@ -268,13 +269,17 @@ h2{
 }
 
 .main__slider-images{
-  display: flex;
+  display: none;
   aspect-ratio: 16/9;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
   -webkit-overflow-scrolling: touch; 
+}
+
+.display-slide{
+  display: flex;
 }
 
 .main__slider-images::-webkit-scrollbar {
@@ -316,16 +321,24 @@ h2{
   width: 90%;
   display: flex;
   flex-direction: column;
+  background-color: var(--main-back-color);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin-top: 30px;
+  box-sizing: border-box;
 }
 
-.main__beastiary p{
+.main__beastiary h2{
   margin: 0;
 }
 
 .main__beastiary img{
-  width: 100%;
+  width: 80%;
   align-self: center;
-  margin-top: 10px;
+}
+
+.main__beastiary button{
+  align-self: end;
 }
 
 /* --------- END OF MAIN SECTION -------- */
