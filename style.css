@@ -269,7 +269,7 @@ h2{
 }
 
 .main__slider-images{
-  display: none;
+  display: flex;
   aspect-ratio: 16/9;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -278,19 +278,20 @@ h2{
   -webkit-overflow-scrolling: touch; 
 }
 
-.display-slide{
-  display: flex;
-}
-
 .main__slider-images::-webkit-scrollbar {
   display: none;
 }
 
-.main__slider-images img{
+.slider-image{
+  display: none;
   flex: 1 0 100%;
   scroll-snap-align: start;
   object-fit: cover;
   margin-bottom: 1rem;
+}
+
+.display-slide{
+  display: flex;
 }
 
 .main__slider-nav{

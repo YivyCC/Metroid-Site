@@ -25,21 +25,33 @@ let intervalID = null;
 
 document.addEventListener("DOMContentLoaded", ()=>{
   slides[slideIndex].classList.add("display-slide");
-  intervalID = setInterval(nextSlide, 2000);
+  intervalID = setInterval(nextSlide, 5000);
 });
 
 function showSlide(index){
+  index >= slides.length ? slideIndex = 0 : index < 0 ? slideIndex = slides.length - 1 : index = index;
+
   slides.forEach(slide =>{
     slide.classList.remove("display-slide");
   });
   slides[slideIndex].classList.add("display-slide");
 }
 
-prevBtn.addEventListener("click", ()=>{
-  alert('pinga');
-});
-
 function nextSlide(){
   slideIndex++;
   showSlide(slideIndex);
 }
+
+prevBtn.addEventListener("click", ()=>{
+  slideIndex--;
+  clearInterval(intervalID);
+  showSlide(slideIndex);
+});
+
+nextBtn.addEventListener("click", ()=>{
+  slideIndex++;
+  clearInterval(intervalID);
+  showSlide(slideIndex);
+});
+
+
