@@ -276,6 +276,8 @@ h2{
   scroll-behavior: smooth;
   box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
   -webkit-overflow-scrolling: touch; 
+  position: relative;
+  outline: 1px solid red;
 }
 
 .main__slider-images::-webkit-scrollbar {
@@ -292,6 +294,24 @@ h2{
 
 .display-slide{
   display: flex;
+}
+
+.slider-btn{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+}
+
+.prev{
+  background: linear-gradient(to right, #ffffff22 20%, transparent 100%);
+}
+
+.next{
+  right: 0;
+  background: linear-gradient(to left, #ffffff22 20%, transparent 100%);
 }
 
 .main__slider-nav{
