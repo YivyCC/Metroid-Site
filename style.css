@@ -156,6 +156,10 @@ body{
 }
 /* -- NAVBAR END -- */
 /* ---------- MAIN CONTENT ---------- */
+.main__intro, .main__game-database, .main__gallery, .main__beastiary{
+  width: clamp(400px, 850px, 60%);
+}
+
 /* -- INTRODUCTION --*/
 .main{
   height: 100%;
@@ -165,7 +169,6 @@ body{
 }
 
 .main__intro{
-  width: 90%;
   height: 80dvh;
   border-radius: var(--border-radius);
   background-color: var(--main-back-color);
@@ -218,9 +221,13 @@ body{
   width: 90%;
   height: 50%;
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: 20px;
+  background: #ffffff00;
   border-radius: var(--border-radius);
-  background-color: #696a6ab8;
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(7.2px);
+  -webkit-backdrop-filter: blur(7.2px);
+  border: 1px solid #6a666640;
   position: absolute;
   display: flex;
   flex-direction: column; 
@@ -237,9 +244,10 @@ p{
 .main__btn{
   font-family: var(--main-font-fam);
   border: transparent;
+  border-radius: var(--border-radius);
   background-color: var(--second-back-color);
   width: max-content;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   padding: 10px;
   cursor: pointer;
   color: var(--main-font-color);
@@ -247,15 +255,15 @@ p{
   transition: filter var(--transition), background var(--transition);
 }
 
+.main__intro-container button{
+  margin-bottom: 20px;
+}
+
 .main__btn:hover{
   filter: drop-shadow(0 2px 2px #7ca7d8ab);
   background: linear-gradient(90deg, var(--second-back-color) 30%, var(--main-back-color) 60%, #7ca7d83f 100%);
 }
 /* -- IMAGE SLIDER --*/
-.main__game-database, .main__gallery{
-  width: 90%;
-}
-
 h2{
   font-family: var(--main-font-fam);
   color: var(--main-font-color);
@@ -266,18 +274,16 @@ h2{
   position: relative;
   max-width: 48rem;
   margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--border-radius);
 }
 
 .main__slider-images{
   display: flex;
   aspect-ratio: 16/9;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-  -webkit-overflow-scrolling: touch; 
   position: relative;
-  outline: 1px solid red;
+  justify-content: center;
 }
 
 .main__slider-images::-webkit-scrollbar {
@@ -286,60 +292,40 @@ h2{
 
 .slider-image{
   display: none;
-  flex: 1 0 100%;
-  scroll-snap-align: start;
-  object-fit: cover;
-  margin-bottom: 1rem;
 }
 
 .display-slide{
-  display: flex;
+  display: block;
 }
 
 .slider-btn{
   position: absolute;
+  opacity: 0;
   top: 0;
   height: 100%;
   border: none;
   cursor: pointer;
-  width: 15%;
+  width: 10%;
+  font-size: 1.5rem;
+  color: #7ca7d856;
+  transition: opacity 0.2s linear;
+}
+
+.main__slider-wrapper:hover .slider-btn{
+  opacity: 1;
 }
 
 .prev{
-  background: linear-gradient(to right, #ffffff22 20%, transparent 100%);
+  background: linear-gradient(to right, #00000075 10%, transparent 100%);
 }
 
 .next{
   right: 0;
-  background: linear-gradient(to left, #ffffff22 20%, transparent 100%);
-}
-
-.main__slider-nav{
-  display: flex;
-  column-gap: 1rem;
-  position: absolute;
-  bottom: 1.25 rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.main__slider-nav a{
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0.75;
-  transition: opacity ease 0.25s;
-}
-
-.main__slider-nav a:hover{
-  opacity: 1;
+  background: linear-gradient(to left, #00000075 10%, transparent 100%);
 }
 
 /* -- BEASTIARY --*/
 .main__beastiary{
-  width: 90%;
   display: flex;
   flex-direction: column;
   background-color: var(--main-back-color);
@@ -420,6 +406,53 @@ footer{
   color: var(--main-phazon-color);
 }
 /*-- END OF FOOTER */
+
+/* -- MEDIA QUERIES --*/
+
+/* Desktop */
+@media screen and (min-width:1200px){
+  .header{
+    background-color: transparent;
+  }
+
+  .header-desk-container {
+    position: relative;
+    width: 100%;
+    height: 100px;
+  }
+  
+  .header__desktop {
+    background-color: var(--main-back-color);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 65% 100%, 60% 40%, 40% 40%, 35% 100%, 0 50%);
+  }
+  
+  .header-desk-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 52px solid var(--main-phazon-color);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 65% 100%, 60% 40%, 40% 40%, 35% 100%, 0 50%);
+  }
+
+  .header__wrapper{
+    display: none;
+  }
+
+  .nav-container{
+    background-color: var(--main-back-color);
+    width: 100%;
+    height: 100px;
+    z-index: 40;
+    position: fixed;
+    bottom: 0;
+  }
+}
 
 /* -- ANIMATIONS --*/
 @keyframes pinga {

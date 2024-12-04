@@ -14,7 +14,15 @@
   <script href="script.js"></script>
 </head>
 <body>
+  <section class="nav-container">
+      
+  </section>
+
   <header class="header" id="header">
+    <div class="header-desk-container">
+      <div class="header__desktop"></div>
+    </div>
+    
     <div class="header__wrapper">
       <a class="header__home-link" href="#">
         <img class="header__home-img" src="images/wallpapers/metroid_S_icon.svg" alt="Metroid 'S' symbol for home page link">
@@ -87,15 +95,12 @@
       <h2>Dive into the Game Database</h2>
       <div class="main__slider-wrapper">
         <div class="main__slider-images">
-          <img src="images/wallpapers/metroid-prime-wallpaper.png" alt="Metroid Prime wallpaper with Samus Aaran and the game logo" id="slide-1">
-          <img src="images/wallpapers/metroid-prime-2-wallpaper.jpg" alt="Metroid Prime 2 Echoes wallpaper with samus pointing her gun at an enemy" id="slide-2">
-          <img src="images/wallpapers/metroid-prime-3-wallpaper.png" alt="Metroid Prime 3 Corruption wallpaper with samus and dark samus facing each other" id="slide-3">
+          <img src="images/wallpapers/metroid-prime-wallpaper.png" alt="Metroid Prime wallpaper with samus on the front and the metroid logo" class="slider-image">
+          <img src="images/wallpapers/metroid-prime-2-wallpaper.jpg" alt="Metroid Prime 2 wallpaper" class="slider-image">
+          <img src="images/wallpapers/metroid-prime-3-wallpaper.png" alt="Metroid Prime 3 wallpaper with samus and dark samus facing each other" class="slider-image">
         </div>
-        <div class="main__slider-nav">
-          <a href="#slide-1"></a>
-          <a href="#slide-2"></a>
-          <a href="#slide-3"></a>
-        </div>
+        <button class="slider-btn prev">&#10094</button>
+        <button class="slider-btn next">&#10095</button>
       </div>
     </section>
     <section class="main__beastiary">
@@ -120,8 +125,6 @@
         </div>
         <button class="slider-btn prev">&#10094</button>
         <button class="slider-btn next">&#10095</button>
-        <div class="main__slider-nav">
-        </div>
       </div>
     </section>
   </main>
