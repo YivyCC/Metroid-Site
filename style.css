@@ -40,6 +40,9 @@ body{
   margin: 10px;
   padding: 5px;
   width: 100%;
+}
+
+.header__style{
   display: flex;
   justify-content: space-between;
 }
@@ -427,21 +430,16 @@ footer div{
     background-color: transparent;
   }
 
-  .header-desk-container {
+  .header__wrapper{
     position: relative;
     width: 100%;
     height: 100px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
   }
-  
-  .header__desktop {
-    background-color: var(--main-back-color);
-    width: 100%;
-    height: 100%;
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 70% 100%, 65% 40%, 35% 40%, 30% 100%, 0 50%);
-  }
-  
-  .header-desk-container::before {
+
+  .header__wrapper::before {
     content: "";
     position: absolute;
     left: 0;
@@ -450,8 +448,29 @@ footer div{
     clip-path: polygon(0 0, 100% 0, 100% 50%, 70% 100%, 65% 40%, 35% 40%, 30% 100%, 0 50%);
   }
 
-  .header__wrapper{
-    display: none;
+  .header__style{
+    background-color: var(--main-back-color);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 70% 100%, 65% 40%, 35% 40%, 30% 100%, 0 50%);
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20rem;
+  }
+
+  .header__home-link{
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 10px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: var(--second-back-color);
+  }
+
+  .header__navbar-btn{
+    width: 3rem;
+    height: 3rem;
   }
 
   /*Side Nav-bar*/
