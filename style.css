@@ -454,9 +454,8 @@ footer div{
     height: 100%;
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 50%, 70% 100%, 65% 40%, 35% 40%, 30% 100%, 0 50%);
-    justify-content: space-evenly;
+    justify-content: start;
     align-items: center;
-    gap: 20rem;
   }
 
   .header__home-link{
@@ -466,6 +465,7 @@ footer div{
     border-radius: 50%;
     box-sizing: border-box;
     background-color: var(--second-back-color);
+    margin-left: 25%;
   }
 
   .header__style button{
@@ -475,6 +475,14 @@ footer div{
   .header__navbar-btn{
     width: 3rem;
     height: 3rem;
+    position: absolute;
+    top: 45%;
+    left: 80px;
+    rotate: 90deg;
+  }
+
+  .nav-btn-toggle{
+    rotate: 180deg;
   }
 
   /*Side Nav-bar*/
@@ -488,6 +496,12 @@ footer div{
     border-radius: var(--border-radius);
     background-color: var(--main-back-color);
     overflow: visible;
+    transition: transform var(--transition);
+    transform-origin: bottom;
+  }
+
+  .appear{
+    transform: translateY(-50%) scaleY(0);
   }
 
   .navbar__nav{
@@ -564,6 +578,7 @@ footer div{
     height: 100%;
     background-color: var(--main-back-color);
     clip-path: polygon(0 0, 0 100%, 100% 100%);
+    position: relative;
   }
   
   .right{

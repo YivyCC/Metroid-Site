@@ -1,17 +1,20 @@
-const navBarBtn = document.querySelector(".header__navbar-btn");
-const navBarList = document.querySelector(".navbar__nav");
+const navBarBtn = document.querySelectorAll(".header__navbar-btn");
 const navBar = document.querySelector(".navbar");
 const header = document.querySelector(".header");
 
 //Nav-bar trigger btn
-navBarBtn.addEventListener("click", () =>{
+function toggleNavBar() {
   navBar.classList.toggle("appear");
-  navBarBtn.classList.toggle("nav-btn-toggle");
+  navBarBtn.forEach(btn => {
+    btn.classList.toggle("nav-btn-toggle");
+  });
+}
+navBarBtn.forEach(btn => {
+  btn.addEventListener("click", toggleNavBar);
 });
 
 //Header background color transparency 'animation'
 let widthMatch = window.matchMedia("(max-width: 500px)");
-// mm in the function arg is the matchMedia object, passed back into the function
 widthMatch.addEventListener('change', function(mm) {
     if (mm.matches) {
       window.addEventListener('scroll', () =>{
@@ -21,7 +24,7 @@ widthMatch.addEventListener('change', function(mm) {
       });
     }
     else {
-      
+      //nada papu
     }
 });
 
