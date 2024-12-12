@@ -604,15 +604,14 @@ footer div{
     display: flex;
     flex-wrap: nowrap;
     justify-content: start;
-}
+  }
 
-.card {
-    width: 80px;
-    border-radius: .75rem;
+  .card {
+    width: 5rem;
+    border-radius: 2rem;
     background-size: cover;
     cursor: pointer;
     overflow: hidden;
-    border-radius: 2rem;
     margin: 0 10px;
     display: flex;
     align-items: flex-end;
@@ -622,33 +621,37 @@ footer div{
     background-size: cover; 
     background-repeat: no-repeat; 
     position: relative;
-}
+  }
 
-.card::after{
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  backdrop-filter: brightness(20%);
-}
+  .card::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: brightness(20%);
+  }
 
-.card > .row {
-  color: white;
-  display: flex;
-  flex-wrap: nowrap;
-}
+  .card > .row {
+    font-family: var(--main-font-fam);
+    color: white;
+    display: flex;
+    align-items: center;
+    outline: 1px solid red;
+  }
 
-.card > .row > .icon {
-    background: #223;
+  .card > .row > .icon {
+    background: var(--second-back-color);
     color: white;
     border-radius: 50%;
-    width: 50px;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 15px;
-}
+    outline: 1px solid red;
+  }
 
 .card > .row > .description {
     display: flex;
