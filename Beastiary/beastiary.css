@@ -1,0 +1,30 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+  position: absolute;
+  margin: 0;
+}
+
+.main__intro{
+  width: 100%;
+  height: 100dvh;
+  outline: 1px solid red;
+  position: relative;
+}
+
+.beastiary-container{
+  outline: 1px solid red;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.beast{
+  position: absolute;
+  aspect-ratio: 8/9;
+}
