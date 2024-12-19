@@ -658,11 +658,14 @@ footer div{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color var(--transition);
   }
+
 
   .card > .row > .icon {
     background: var(--second-back-color);
-    color: white;
     border-radius: 50%;
     min-width: 2.5rem;
     min-height: 2.5rem;
@@ -670,7 +673,13 @@ footer div{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .3s ease;
+    position: relative;
+  }
+
+  .icon::after{
+    content: attr(data-content);
+    position: absolute;
+    transition: background-color var(--transition), content var(--transition);
   }
 
   .card > .row > .description {
@@ -712,6 +721,23 @@ footer div{
     background-color: #00000090;
     /* background: linear-gradient(to bottom, transparent 20%, #000000 50%); */
     justify-content: space-evenly;
+  }
+
+  input:checked + .card > .row:hover{
+    background-color: #000000a1;
+  }
+
+  input:checked + .card > .row:hover > .icon::after{
+    content: "GO!";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    background-color: inherit;
+    color: var(--main-phazon-color);
   }
 
   input:checked + .card > .row > .icon{
@@ -765,19 +791,12 @@ footer div{
     height: 60dvh;
   }
 
-  .beastiary-container{
-    outline: 1px solid red;
-    width: 130%;
-    height: 70%;
-    translate: -10% 0;
-  }
 
   .main__beastiary img{
     position: absolute;
     right: -50%;
     top: 50%;
     translate: 0 -50%;
-    display: none;
   }
 
 
@@ -934,11 +953,4 @@ footer div{
 }
 
 /* -- ANIMATIONS --*/
-@keyframes pinga {
-  from{
-    opacity: 1;
-  }
-  to{
-    opacity: 0.1;
-  }
-}
+
