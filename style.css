@@ -683,11 +683,11 @@ footer div{
   }
 
   .card > .row > .description {
-    display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    width: 85%;
+    min-width: 85%;
     height: 100%;
     transform: scaleX(0);
     transition: all .3s ease;
@@ -745,6 +745,7 @@ footer div{
   }
 
   input:checked + .card > .row > .description {
+    display: flex;
     transform: scaleX(1);
   }
 
@@ -788,17 +789,63 @@ footer div{
 
   /* Main beastiary */
   .main__beastiary{
-    height: 60dvh;
+    width: 60%;
+    height: 80dvh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-
-  .main__beastiary img{
-    position: absolute;
-    right: -50%;
-    top: 50%;
-    translate: 0 -50%;
+  .main__beastiary-main-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
   }
 
+  .main__beastiary-main-content p, .main__beastiary-main-content h2{
+    text-align: center;
+  }
+
+  .main__beastiary-main-content button{
+    align-self: center !important;
+  }
+
+  .main__beastiary-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 14.5rem);
+    justify-items: center;
+    gap: 0.5rem;
+  }
+
+  .main__beastiary-grid a{
+    min-width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    background-color: var(--second-back-color);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .main__beastiary-grid a:first-child{
+    grid-column: span 2;
+  }
+
+  .main__beastiary-grid a:hover > img{
+    width: 110%;
+    height: 110%;
+  }
+
+  .main__beastiary-grid img{
+    width: 100%;  
+    height: 100%;
+    object-fit: contain;
+    transition: height var(--transition), width var(--transition);
+  }
 
   /* Main Gallery */
   .main__gallery{
