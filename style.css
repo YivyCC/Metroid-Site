@@ -44,7 +44,7 @@ body{
   width: 100%;
 }
 
-.header__style{
+.header__shape{
   display: flex;
   justify-content: space-between;
 }
@@ -445,8 +445,11 @@ footer div{
 
 /* Desktop */
 @media screen and (min-width:1200px){
+
   .header{
     background-color: transparent;
+    position: fixed;
+    width: 100%;
   }
 
   .header__wrapper{
@@ -467,7 +470,7 @@ footer div{
     clip-path: polygon(0 0, 100% 0, 100% 50%, 70% 100%, 65% 40%, 35% 40%, 30% 100%, 0 50%);
   }
 
-  .header__style{
+  .header__shape{
     background-color: var(--main-back-color);
     width: 100%;
     height: 100%;
@@ -487,7 +490,7 @@ footer div{
     margin-left: 25%;
   }
 
-  .header__style button{
+  .header__shape button{
     display: none;
   }
 
@@ -505,15 +508,21 @@ footer div{
   }
 
   /* Main intro section */
-  .main__intro{
+  .main__intro, .main__game-database, .main__beastiary, .main__gallery{
     width: 60%;
-    height: 80dvh;
+    box-sizing: border-box;
+  }
+
+
+  .main__intro{
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     background-color: transparent;
+    margin: 0;
   }
 
   .main__intro::after{
@@ -522,7 +531,7 @@ footer div{
     width: 100dvw;
     height: 2px;
     bottom: -2px;
-    background-color: #61c589;
+    background-color: var(--main-phazon-color);
   }
 
   .main__intro::before{
@@ -532,7 +541,7 @@ footer div{
     height: 10px;
     bottom: -5px;
     border-radius: 50%;
-    background-color: #61c589;
+    background-color: var(--main-phazon-color);
   }
   
   .main__intro h1{
@@ -560,7 +569,7 @@ footer div{
     background-image: url(images/wallpapers/samus-aaran.png);
     background-size: auto 130%;
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: 10% -20%;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -568,8 +577,8 @@ footer div{
   }
 
   .main__intro-container{
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 70%;
     box-sizing: border-box;
     padding: 20px;
     background: #ffffff00;
@@ -579,33 +588,36 @@ footer div{
     -webkit-backdrop-filter: blur(7.2px);
     border: 1px solid #6a666640;
     position: absolute;
-    top: 0;
-    left: 70%;
-    transform: translateX(-60%);
+    top: 20%;
+    right: 0;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    align-items: center; 
     justify-content: center;
-    z-index: 3;
+    text-align: center;
+    z-index: 1;
   }
   
-  p{
+  .main__intro-container h2{
+    color: var(--main-phazon-color);
+    font-size: 2rem;
+  }
+
+  .main__intro-container p{
     color: var(--main-font-color);
     font-family: var(--main-font-fam);
     font-size: var(--paragraph-font-size);
   }
   
-  .main__btn{
-    font-family: var(--main-font-fam);
-    border: transparent;
-    border-radius: var(--border-radius);
-    background-color: var(--second-back-color);
-    width: max-content;
-    font-size: 1.4rem;
-    padding: 10px;
-    cursor: pointer;
-    color: var(--main-font-color);
-    filter: drop-shadow(0 2px 2px var(--second-back-color));
-    transition: filter var(--transition), background var(--transition);
+  .main__intro-container button{
+    background-color: var(--main-font-color);
+    color: var(--second-back-color);
+    filter: drop-shadow(0 2px 2px var(--main-font-color));
+  }
+
+  .main__intro-container button:hover{
+    filter: drop-shadow(0 2px 2px #7ca7d8ab);
+    background: linear-gradient(90deg, var(--main-font-color) 30%, #c5c5c5 60%, #7ca7d83f 100%);
   }
 
   /* First card slider */
@@ -613,8 +625,10 @@ footer div{
     display: none;
   }
 
-  .main__game-database{
-    width: 60%;
+  .main__game-database h2{
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1rem;
   }
 
   .main__card-wrapper {
@@ -633,12 +647,16 @@ footer div{
     margin: 0 10px;
     display: flex;
     align-items: end;
-    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    transition: .3s cubic-bezier(.28,-0.03,0,.99);
     box-shadow: 0px 10px 20px -5px #6a666640;
     background-position: center; 
     background-size: cover; 
     background-repeat: no-repeat; 
     position: relative;
+  }
+
+  .card:hover{
+    transform: scale(1.05);
   }
 
   .card::after{
@@ -662,7 +680,6 @@ footer div{
     z-index: 2;
     transition: background-color var(--transition);
   }
-
 
   .card > .row > .icon {
     background: var(--second-back-color);
@@ -711,6 +728,10 @@ footer div{
   input:checked + label {
     width: 600px;
     cursor: auto;
+  }
+
+  input:checked + label:hover{
+    transform: scale(1);
   }
 
   input:checked + .card::after {
@@ -789,7 +810,6 @@ footer div{
 
   /* Main beastiary */
   .main__beastiary{
-    width: 60%;
     height: 80dvh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -799,7 +819,7 @@ footer div{
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
   }
 
@@ -848,8 +868,8 @@ footer div{
   }
 
   /* Main Gallery */
-  .main__gallery{
-    box-sizing: border-box;
+  .main__gallery h2{
+    text-align: center;
   }
 
   /*Side Nav-bar*/
@@ -961,17 +981,19 @@ footer div{
     height: 150px;
     justify-content: space-between;
     border: none;
-    
+    outline: 1px solid red;
   }
 
   .footer__sides{
-    display: block;
+    display: flex;
+    flex-direction: column;
     min-width: var(--side-bar-dec-width);
+    max-width: var(--side-bar-dec-width);
     background-color: var(--main-back-color);
     position: relative;
   }
 
-  .footer__sides:first-child::after{
+  .footer__sides::after{
     content: '';
     position: absolute;
     background-color: inherit;
@@ -982,19 +1004,25 @@ footer div{
   }
 
   .footer__sides:last-child::after{
-    content: '';
-    position: absolute;
-    background-color: inherit;
-    clip-path: polygon(0 0, 0% 100%, 100% 100%);
-    width: var(--inclination);
-    height: 100%;
     left: calc(var(--inclination)*-0.99);
     transform: rotateY(180deg);
+  }
+
+  .footer__sides:first-child h3{
+    color: var(--main-phazon-color);
+  }
+
+  .footer__sides:first-child p{
+    font-size: 0.8rem;
   }
 
   .footer__list{
     max-width: calc(100% - var(--side-bar-dec-width)*2 - var(--inclination)*0.66);
     padding: 0;
+  }
+  
+  .footer__list-item:first-child{
+    display: none;
   }
 
 }
