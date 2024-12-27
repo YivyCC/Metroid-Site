@@ -390,7 +390,7 @@ footer{
   justify-content: center;
 }
 
-footer div{
+.footer__sides{
   display: none;
 }
 
@@ -431,6 +431,15 @@ footer div{
 
 .quick--links{
   display: none;
+}
+
+.contact--us{
+  gap: 0.4rem;
+}
+
+.footer__socials-container{
+  display: flex;
+  gap: 2rem;
 }
 
 .footer__social-links img{
@@ -1042,16 +1051,6 @@ footer div{
   
   .footer__list-item:first-child, .footer__list-item:nth-child(2){
     display: none;
-  }
-
-  .contact--us{
-    height: 50px;
-    outline: 1px solid red;
-  }
-
-  .footer__socials-container a{
-    width: min-content;
-    outline: 1px solid red;
   }
 }
 
