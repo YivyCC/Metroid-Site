@@ -108,6 +108,7 @@ body{
   height: 100%;
   padding-top: 80px;
   box-sizing: border-box;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 } 
 
@@ -151,6 +152,11 @@ body{
 .navbar__link:hover .navbar__item-image{
   filter: drop-shadow(0 2000px 0 var(--main-phazon-color));
   transform: translateY(-2000px);
+}
+
+.navbar__item-image{
+  width: 70px;
+  height: 70px;
 }
 
 .navbar__link .navbar__item-image-container div{
@@ -218,7 +224,7 @@ body{
 }
 
 .model{
-  background-image: url(images/wallpapers/samus-aaran.png);
+  background-image: url(images/wallpapers/samus-aaran.webp);
   background-size: auto 130%;
   background-repeat: no-repeat;
   background-position: top center;
@@ -238,8 +244,8 @@ body{
   background: #ffffff00;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 30px #0000001a;
-  backdrop-filter: blur(7.2px);
   -webkit-backdrop-filter: blur(7.2px);
+  backdrop-filter: blur(7.2px);
   border: 1px solid #6a666640;
   position: absolute;
   display: flex;
@@ -277,7 +283,13 @@ p{
   background: linear-gradient(90deg, var(--second-back-color) 30%, var(--main-back-color) 60%, #7ca7d83f 100%);
 }
 /* -- IMAGE SLIDER --*/
+.main__game-database{
+  padding: 2rem !important;
+  box-sizing: border-box;
+}
+
 h2{
+  text-align: center;
   font-family: var(--main-font-fam);
   color: var(--main-font-color);
   margin-bottom: 1rem;
@@ -352,17 +364,30 @@ h2{
   position: relative;
 }
 
+.main__beastiary-main-content{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .main__beastiary h2{
   margin: 0;
+  text-align: start;
+  color: var(--main-phazon-color);
 }
 
 .main__beastiary img{
   width: 80%;
-  align-self: center;
 }
 
-.main__beastiary button{
-  align-self: end;
+.main__beastiary-main-content button{
+  margin-top: 1rem;
+}
+
+.main__beastiary-grid{
+  display: none;
 }
 
 /* Main Gallery */
@@ -571,7 +596,7 @@ footer{
     margin-right: auto;
     font-family: var(--second-font-fam);
     line-height: 1em;
-    font-size: 10rem;
+    font-size: 7rem;
     color: var(--main-font-color);
   }
   
@@ -585,10 +610,10 @@ footer{
   }
   
   .model{
-    background-image: url(images/wallpapers/samus-aaran.png);
-    background-size: auto 130%;
+    background-image: url(images/wallpapers/samus-aaran.webp);
+    background-size: auto 120%;
     background-repeat: no-repeat;
-    background-position: 10% -20%;
+    background-position: -15% -70%;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -597,7 +622,7 @@ footer{
 
   .main__intro-container{
     width: 40%;
-    height: 70%;
+    height: 60%;
     box-sizing: border-box;
     padding: 20px;
     background: #ffffff00;
@@ -607,19 +632,19 @@ footer{
     -webkit-backdrop-filter: blur(7.2px);
     border: 1px solid #6a666640;
     position: absolute;
-    top: 20%;
+    top: 25%;
     right: 0;
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center;
-    text-align: center;
+    text-align: start;
     z-index: 1;
   }
   
   .main__intro-container h2{
     color: var(--main-phazon-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .main__intro-container p{
@@ -654,7 +679,7 @@ footer{
     height: 400px;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content: center;
   }
 
   .card {
@@ -674,6 +699,10 @@ footer{
     position: relative;
   }
 
+  .card:nth-child(4), .card:nth-child(6), .card:nth-child(8){
+    display: none;
+  }
+
   .card:hover{
     transform: scale(1.05);
   }
@@ -684,6 +713,7 @@ footer{
     width: 100%;
     height: 100%;
     background-color: transparent;
+    -webkit-backdrop-filter: brightness(20%);
     backdrop-filter: brightness(20%);
   }
 
@@ -754,6 +784,7 @@ footer{
   }
 
   input:checked + .card::after {
+    -webkit-backdrop-filter: brightness(100%);
     backdrop-filter: brightness(100%);
   }
 
@@ -790,41 +821,41 @@ footer{
   }
 
   .card[for="c1"] {
-    background-image: url('images/wallpapers/metroid1.jpg');
+    background-image: url('images/wallpapers/metroid1.webp');
   }
 
   .card[for="c2"] {
-    background-image: url('images/wallpapers/metroid2.jpg');
+    background-image: url('images/wallpapers/metroid2.webp');
   }
 
   .card[for="c3"] {
-    background-image: url('images/wallpapers/metroid3.png');
+    background-image: url('images/wallpapers/metroid3.webp');
   }
 
   .card[for="c4"] {
-    background-image: url('images/wallpapers/metroid-fusion.jpg');
+    background-image: url('images/wallpapers/metroid-fusion.webp');
   }
 
   .card[for="c5"] {
-      background-image: url('images/wallpapers/metroid-prime-remastered-samus.jpg');
+      background-image: url('images/wallpapers/metroid-prime-remastered-samus.webp');
   }
   .card[for="c6"] {
-      background-image: url('images/wallpapers/mp2.jpg');
+      background-image: url('images/wallpapers/mp2.webp');
   }
   .card[for="c7"] {
-      background-image: url('images/wallpapers/metroid-prime-3-wallpaper.png');
+      background-image: url('images/wallpapers/metroid-prime-3-wallpaper.webp');
   }
 
   .card[for="c8"] {
-    background-image: url('images/wallpapers/mp4.jpg');
+    background-image: url('images/wallpapers/mp4.webp');
   }
 
   .card[for="c9"] {
-      background-image: url('images/wallpapers/metroid-otherM.jpg');
+      background-image: url('images/wallpapers/metroid-otherM.webp');
   }
 
   .card[for="c10"] {
-    background-image: url('images/wallpapers/metroid-dread.jpg');
+    background-image: url('images/wallpapers/metroid-dread.webp');
   }
 
   /* Main beastiary */
@@ -832,6 +863,8 @@ footer{
     height: 80dvh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
   }
 
   .main__beastiary-main-content{
@@ -840,10 +873,12 @@ footer{
     height: 100%;
     justify-content: space-evenly;
     align-items: center;
+    padding: 1.5rem;
   }
 
   .main__beastiary-main-content h2{
     text-align: center;
+    color: var(--main-phazon-color);
   }
 
   .main__beastiary-main-content button{
@@ -853,9 +888,9 @@ footer{
   .main__beastiary-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 14.5rem);
+    grid-template-rows: repeat(3, 12rem);
     justify-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .main__beastiary-grid a{
@@ -887,16 +922,24 @@ footer{
   }
 
   /* Main Gallery */
+  .main__gallery{
+    padding: 2rem;
+  }
+
   .main__gallery h2{
+    text-align: center;
+  }
+
+  .main__gallery p{
     text-align: center;
   }
 
   /*Side Nav-bar*/
   .navbar{
     position: fixed;
-    width: 120px;
-    height: 70dvh;
-    left: 40px;
+    width: 100px;
+    height: 60dvh;
+    left: 30px;
     top: 50%;
     transform: translateY(-50%);
     border-radius: var(--border-radius);
@@ -918,8 +961,8 @@ footer{
   }
   
   .navbar__nav-item{
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
   }
 
   .navbar__link{
@@ -1054,5 +1097,47 @@ footer{
   }
 }
 
-/* -- ANIMATIONS --*/
+/* ----------- Ultra-wide screens ---------------- */
+@media (min-width: 1600px) {
+  .main__intro h1{
+    font-size: 10rem;
+  }
+  
+  .model{
+    background-size: auto 130%;
+    background-position: 10% -20%;
+  }
+  
+  .main__intro-container{
+    height: 70%;
+    top: 20%;
+  }
+  
+  .main__intro-container h2{
+    font-size: 2rem;
+  }
+  
+  .main__card-wrapper {
+    height: 400px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
+  
+  .card:nth-child(2), .card:nth-child(4), .card:nth-child(6), .card:nth-child(8){
+    display: flex;
+  }
+  
+  /*Side Nav-bar*/
+  .navbar{
+    width: 120px;
+    height: 70dvh;
+    left: 40px;
+  }
+  
+  .navbar__nav-item{
+    width: 5rem;
+    height: 5rem;
+  }
+}
 
